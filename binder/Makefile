@@ -1,4 +1,5 @@
-ccflags-y = -I$(src) -DCONFIG_ANDROID_BINDERFS -DCONFIG_ANDROID_BINDER_DEVICES_HACKED="\"binder,hwbinder,vndbinder\""
+ccflags-y = -I$(src) -Wno-error -Wno-incompatible-pointer-types -DCONFIG_ANDROID_BINDERFS -DCONFIG_ANDROID_BINDER_DEVICES_HACKED="\"binder,hwbinder,vndbinder\""
+cflags := -Wno-error -Wno-incompatible-pointer-types
 obj-m := binder_linux.o
 binder_linux-y := binderfs.o binder.o binder_alloc.o idr.o deps.o
 
